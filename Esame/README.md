@@ -1,6 +1,6 @@
 # React + Vite
 
-[00:40, 24/02/2025] Luca: Esame_React
+Luca: Esame_React
 
 Questo progetto è un'applicazione realizzata con React e un backend in Flask. Di seguito sono riportate le istruzioni per l'installazione, la configurazione e l'esecuzione del progetto, comprese le dipendenze per il frontend e il backend.
 
@@ -32,20 +32,7 @@ Installazione del frontend (React)
    bash
    npm install
    
-[00:40, 24/02/2025] Luca: Questo comando installerà tutte le librerie necessarie per il funzionamento del frontend, come quelle relative a React.
-
-Esecuzione del frontend (React)
-
-Per avviare il progetto in modalità di sviluppo, esegui il seguente comando:
-
-bash
-npm start
-
-
-Questo avvierà il server di sviluppo, e potrai accedere all'applicazione nel tuo browser all'indirizzo:
-
-
-http://localhost:3000
+Questo comando installerà tutte le librerie necessarie per il funzionamento del frontend, come quelle relative a React.
 
 
 Installazione del backend (Flask)
@@ -55,7 +42,7 @@ Installazione del backend (Flask)
    Se non l'hai già fatto, spostati nella cartella del backend dove si trova il file server_with_mock.py.
 
    bash
-   cd Esame_React/Esame/backend
+   cd Esame_React/Esame
    
 
 2. Crea un ambiente virtuale Python (facoltativo ma consigliato):
@@ -90,7 +77,7 @@ Installazione del backend (Flask)
 
    - psycopg2: Per connettersi a un database PostgreSQL.
    - flask: Per il server backend.
-[00:40, 24/02/2025] Luca: - flask-cors: Per gestire il Cross-Origin Resource Sharing (CORS), consentendo al frontend React di comunicare con il server Flask.
+   - flask-cors: Per gestire il Cross-Origin Resource Sharing (CORS), consentendo al frontend React di comunicare con il server Flask.
 
 Esecuzione del backend (Flask)
 
@@ -105,57 +92,27 @@ Esecuzione del backend (Flask)
    Questo avvierà il server Flask, che sarà accessibile all'indirizzo:
 
    
-   http://127.0.0.1:5000
+   http://127.0.0.1:8050
    
 
    Assicurati che il server Flask stia funzionando correttamente prima di avviare il frontend, in modo che le comunicazioni tra il backend e il frontend possano avvenire senza problemi.
 
-Costruzione del progetto per la produzione
+Esecuzione del frontend (React)
 
-Per creare una versione ottimizzata per la produzione del progetto React, puoi eseguire il comando:
-
-bash
-npm run build
-
-
-Questo creerà una cartella build contenente una versione minimizzata del progetto, pronta per essere distribuita.
-
-Test
-
-Per eseguire i test del progetto React, usa il comando:
- 
-bash
-npm test
-
-
-Per eseguire i test del backend (se presenti), puoi aggiungere i tuoi test a Flask e usarli come segue:
+Avviare un secondo terminale così che il primo gestisca solamente il backend, per avviare il progetto esegui il seguente comando nella cartella del progetto:
 
 bash
-python -m unittest test_file.py
+npm run dev
 
 
-Librerie utilizzate
+Questo avvierà il server, e si potra visualizzare la pagina facendo ctrl + click sinistro sul link che compare nel terminale .
 
-Frontend (React):
 
-- React: La libreria principale per costruire l'interfaccia utente.
-[00:40, 24/02/2025] Luca: - React Router (se presente): Per la gestione della navigazione tra le pagine.
-- Axios (se presente): Per effettuare richieste HTTP al backend.
-
-Backend (Flask):
-
-- Flask: Il framework Python per costruire il server backend.
-- Flask-CORS: Per abilitare il CORS e consentire la comunicazione tra il frontend e il backend.
-- psycopg2: Per connettersi e interagire con un database PostgreSQL.
-
-Contribuire
-
-Se desideri contribuire al progetto, puoi fare un fork della repository e inviare una pull request con le tue modifiche.
+Il progetto consiste di una pagina web dalla quale è possibile inviare query ad un database e visualizzare la risposta in una tabella.
+In caso la conessione al database sia assente il backend utilizzerà il file mock_data.json così da simulare la chiamata al server,
+ma  verà nascosta la possibilità di aggiungere clausole WHERE la quale viene automaticamente riaggiunta nel momento in cui il backend riesce a ricollegarsi 
+al database.
 
 Licenza
 
 Questo progetto è sotto licenza [MIT](LICENSE).
-
----
-
-Spero che queste modifiche siano utili! Se hai bisogno di altre modifiche o chiarimenti, fammi sapere!
